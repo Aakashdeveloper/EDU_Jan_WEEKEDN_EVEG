@@ -1,0 +1,26 @@
+JSON
+JavaScript Object notation
+
+package.json
+
+// tpo create package json
+npm init
+
+// to install 
+npm install zone.js --save
+
+
+// to create seed
+npm install -g @angular/cli
+
+//Mac or linux
+sudo npm install -g @angular/cli
+
+//window
+run cmd as admin
+npm install -g @angular/cli
+
+
+// To create  App
+ng new productapp
+
