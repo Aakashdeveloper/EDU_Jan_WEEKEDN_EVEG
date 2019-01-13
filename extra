@@ -9,6 +9,8 @@ npm init
 // to install 
 npm install zone.js --save
 
+npm install zone.js@7.4.5 --save
+
 
 // to create seed
 npm install -g @angular/cli
@@ -24,3 +26,55 @@ npm install -g @angular/cli
 // To create  App
 ng new productapp
 
+npm start
+
+////////////////////////Day 2///////////////
+node_module=> Contaion all depende
+Src=> All app code
+.editorconfig=> symmetrical coding
+.gitigonre=> file i dont want to push
+angular.json/angular-cli.json=>
+this is very first file that provide all path
+package-lock.json=> information about minor version
+package.json=> all packages & commands
+ReadMe.md=> infromation about app
+tsconfig.json=> that convert to .js and make build of app
+tslint.json=> linting of code
+
+Ecma Script
+
+
+package.json=> angular.json=> main.ts || Index.html => app.module.ts=> app.component.ts=> allcomp& module
+
+
+module  => where we declare all the things  
+component=> all logics / html/ css
+pipes=> to manupulate the date on run time
+services=> to external api/ third party
+routing=> to make single page and navigate between pages
+
+main module & main component
+
+
+.ts
+class
+import export interface extends
+
+import 
+
+
+Module => NgModule
+Component=> Component
+Pipe=> Pipe, PipeTransform
+Service=> Injectable
+Router=> RouterModule
+
+
+grids
+tables
+buttons
+glyphicons
+panels
+navbar
+input
+modal
