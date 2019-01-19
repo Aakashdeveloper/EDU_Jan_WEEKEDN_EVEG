@@ -78,3 +78,80 @@ panels
 navbar
 input
 modal
+
+
+/*
+One Way Binding
+-- Data Binding {{}}
+-- Property Binding []
+-- Event Binding ()
+Two Way Binding [()]
+*/
+
+
+/*\
+datatypes
+String  = ""
+Number = 897.8
+Boolean = true/false
+any
+*/
+
+keywords
+var = redeclare & reassign
+let = cannot redeclare but reassign
+const = cont redeclare & not reassign
+
+function add(){
+    var q = 10
+}
+
+q not allowed clouser
+
+if(a==10){
+    var w = 10
+}
+
+w allowed 
+
+if(a==10){
+    let g = 10
+}
+
+g not allowed
+
+//////////////
+function add(a,b){
+    return a+b
+}
+
+let add = (a,b) => { return a+b }
+arrow
+fat arrow
+lymda
+
+
+var z = 10
+undefined
+z == 10 ? 'hiii':'biee'
+"hiii"
+z > 10 ? 'hiii':'biee'
+"biee"
+
+
+if product == true
+if(product)
+
+
+var a = 10
+var b = "my age is" +10
+
+var a = 10
+var b = "my age is" +10
+undefined
+b
+"my age is10"
+var c = `my age is ${a}`
+undefined
+c
+"my age is 10"
