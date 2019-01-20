@@ -155,3 +155,33 @@ var c = `my age is ${a}`
 undefined
 c
 "my age is 10"
+
+//////
+searchBar
+passing data from one comp to other
+conditional Css
+Services
+
+
+//
+routing
+modules
+share component
+router gaurds
+
+lifecycle
+ngOnChanges
+ngOnInit
+
+/*
+out act like event
+input act like property
+*/
+
+
+function add(a,b){
+    return a+b
+}
+
+
+var sum = add(1,3);

@@ -15,7 +15,7 @@
         </div>
         <div class="row">
             <div class="col-md-6">
-                <h4>{{info}}:{{userInput}}</h4>
+                <h4>{{info}} "{{userInput}}" is {{(products|productSearch:userInput).length}}</h4>
             </div>
         </div>
         {{showImage}}
@@ -33,10 +33,11 @@
                         <th>Code</th>
                         <th>Date</th>
                         <th>Price</th>
+                        <th>Rating</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let prod of products">
+                    <tr *ngFor="let prod of products | productSearch:userInput">
                         <td>
                             <img [src]="prod.imageUrl"
                                 *ngIf="showImage"
@@ -45,7 +46,15 @@
                         <td style="color:magenta">{{prod.productName | myUpper:'upper':'ABC'}}</td>
                         <td>{{prod.productCode | myUpper:'lower':'XYZ'}}</td>
                         <td>{{prod.releaseDate}}</td>
-                        <td>{{prod.price | discounted:5 | currency:"EUR" }}</td>
+                        <td [ngStyle]="{'background-color':prod.price<20?'tomato':'slateblue',
+                                        'color':'white'}">
+                            {{prod.price | discounted:5 | currency:"EUR" }}
+                        </td>
+                        <td><app-star
+                            [rating]="prod.starRating"
+                            (ratingClicked)="onDataRecive($event)">
+                             </app-star>
+                        </td>
                     </tr>
                 </tbody>
             </table>

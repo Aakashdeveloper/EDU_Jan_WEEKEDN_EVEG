@@ -8,6 +8,9 @@ import { DetailComponent } from './detail.component';
 import { ProductComponent } from './products/product.component';
 import { MyUpperPipe } from './products/myUpper.pipe';
 import { DiscountedPipe } from './products/discount.pipe';
+import { ProductSearchPipe } from './products/productSearch.pipe';
+import { StarComponent } from './shared/star.component';
+import { ProductService } from './products/product.service';
 
 @NgModule({
 
@@ -17,7 +20,9 @@ import { DiscountedPipe } from './products/discount.pipe';
         DetailComponent,
         ProductComponent,
         MyUpperPipe,
-        DiscountedPipe
+        DiscountedPipe,
+        ProductSearchPipe,
+        StarComponent
     ],
 
     // All Module
@@ -32,7 +37,9 @@ import { DiscountedPipe } from './products/discount.pipe';
     ],
 
     // All Services
-    providers: []
+    providers: [
+        ProductService
+    ]
 
 })
 
