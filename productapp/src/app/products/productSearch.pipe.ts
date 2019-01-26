@@ -5,6 +5,7 @@ import { IProduct } from './product.model';
     name: 'productSearch'
 })
 
+
 export class ProductSearchPipe implements PipeTransform {
     transform(value: IProduct[], userDate: string) {
         userDate = userDate ? userDate.toLowerCase() : null;

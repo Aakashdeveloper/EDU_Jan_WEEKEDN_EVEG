@@ -1,0 +1,13 @@
+<div class="panel panel-danger">
+    <div class="panel-heading">
+        Product Detail for id {{id}}
+    </div>
+    <div class="panel-body">
+        <h1>{{details[0].productName}}</h1>
+        <img [src]="details[0].imageUrl" />
+        <h2>{{details[0].description}}</h2>
+        <button class="btn btn-danger" (click)="onBack()">
+            <<Back
+        </button>
+    </div>
+</div>  
