@@ -1,0 +1,45 @@
+<div class="row">
+    <div class="col-md-6">
+        
+        <table>
+            <thead>
+                <th>
+                   Movies
+                </th>
+                <th></th>
+                <th></th>
+            </thead>
+            <tbody >
+                <tr *ngFor="let mov of movies" (click)="dislay(mov.name)">
+                    <td>{{mov.name}}</td>
+                    <td>
+                        <img [src]="mov.imageUrl" class="img-responsive"/>
+                    </td>
+                    <td>{{mov.type}}</td>
+                    <hr/>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-6">
+            <table>
+                    <thead>
+                        <th>
+                           Details
+                        </th>
+                        <th></th>
+                        <th></th>
+                    </thead>
+                    <tbody >
+                        <tr *ngFor="let mov of movies">
+                            <td>{{mov.name}}</td>
+                            <td>
+                                <img [src]="mov.imageUrl" class="img-responsive"/>
+                            </td>
+                            <td>{{mov.type}}</td>
+                            <hr/>
+                        </tr>
+                    </tbody>
+                </table>
+    </div>
+</div>
