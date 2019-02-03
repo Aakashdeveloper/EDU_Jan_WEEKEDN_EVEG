@@ -1,0 +1,119 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        Cutsomer Form
+    </div>
+    <div class="panel-body">
+        <form #form="ngForm" (submit)="formSubmit(form)">
+            <div class="form-group" [class.has-error]="firstName.invalid">
+                <label for="firstname"
+                        class="control-label">FirstName</label>
+                <input class="form-control"
+                        placeholder="firstname"
+                        id="firstname"
+                        required
+                        name="firstname"
+                        type="text"
+                        [(ngModel)]="model.firstname"
+                        #firstName="ngModel"
+                        />
+                    <div class="alert alert-danger" *ngIf="firstName.invalid">
+                                First name is required
+                    </div>
+            </div>
+            <h2>Classes</h2>
+            <h3>{{firstName.className}}</h3>
+            <div class="form-group">
+                <label for="lastname">LastName</label>
+                <input class="form-control"
+                        placeholder="lastname"
+                        id="lastname"
+                        name="lastname"
+                        type="text"
+                        [(ngModel)]="model.lastname"
+                        />
+               
+            </div>
+            <div class="form-group">
+                    <label for="email">Email</label>
+                    <input class="form-control"
+                            placeholder="email"
+                            id="email"
+                            name="email"
+                            [(ngModel)]="model.email"
+                            pattern="^([a-zA-Z0-9]+)@([a-zA-Z0-9]+)\.([a-zA-Z]{2,5})$"
+                            #Email="ngModel"
+                            />
+
+                            <div class="alert alert-danger" *ngIf="Email.invalid && Email.touched">
+                                    Please enter valid email
+                            </div>
+            </div>
+            <div class="form-group">
+                    <label for="password">Password</label>
+                    <input class="form-control"
+                            placeholder="password"
+                            id="password"
+                            name="password"
+                            [(ngModel)]="model.password"
+                            minlength="5"
+                            type="password"
+                            #password="ngModel"/>
+                    <div class="alert alert-danger" *ngIf="password.invalid">
+                                    min lenhtn is 5
+                     </div>
+            </div>
+           
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"
+                            name="fulltime"
+                            value="fulltime"
+                            [(ngModel)]="model.fulltime"
+                        />FullTime
+                </label>
+            </div>
+            <div class="form-group">
+                <label> Gender</label>
+                    <div class="radio">
+                            <label>
+                                <input type="radio"
+                                        name="gender"
+                                        value="female"
+                                        [(ngModel)]="model.gender"
+                                />Female
+                            </label>
+                        </div>
+                        <div class="radio">
+                                <label>
+                                    <input type="radio"
+                                            name="gender"
+                                            value="male"
+                                            [(ngModel)]="model.gender"
+                                    />Male
+                                </label>
+                        </div>
+            </div>
+           
+            <div class="form-group">
+                <label> Code Lang </label>
+                <select class="form-control"
+                        name="codelang"
+                        [(ngModel)]="model.codelang"
+                        (blur)="validateCodelang()">
+                    <option value="default">Select Code lang</option>
+                    <option *ngFor="let lang of languages" >
+                        {{lang}}
+                    </option>
+                </select>
+
+                <div class="alert alert-danger" *ngIf="hasCodeAangerror">
+                        Please select valid input
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success"
+            [disabled]="hasCodeAangerror">
+                Submit
+            </button>
+        </form>
+    </div>
+</div>
