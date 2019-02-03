@@ -198,3 +198,7 @@ json-server --watch db.json --port 8700
 ng pristine ng-untouced   ng-valid
 ng-dirty    ng-touched      ng-invalid
 */
+
+
+//
+ng g c for component
