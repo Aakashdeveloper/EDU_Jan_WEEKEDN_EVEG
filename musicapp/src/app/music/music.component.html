@@ -1,0 +1,185 @@
+    <div class="row">
+            <div class="container" style="border:10px solid #0a0a0a" > 
+                    <div class="col-sm-5">
+                    <table class="table table-striped table-hover">
+                    <thead style="background-color:cornflowerblue">
+                    <th> 
+                     {{title}}
+                    </th>
+                    </thead>
+                <tbody *ngFor="let artist of music">
+                            <tr *ngFor="let album of artist.artists" (click)="display(album.name)" >
+                                <td>
+                                    {{i}}
+                                    <div>
+                                    <img src="./assets/Images/covers/{{album.cover}}.jpg" class="img-circle" alt="Cinque Terre" height="70px" width="70px" />
+                                    </div>
+                                    <div class="text-justify">
+                                    <h5> {{album.name}}</h5><small>{{album.bio}}</small> 
+
+                                    </div>
+                                </td>
+                            </tr>        
+                </tbody>
+                
+                </table> 
+                </div>     
+                <div class="col-sm-7">
+                    <table class="table table-striped">
+                        <thead style="background-color:cornflowerblue">
+                            <th> Albums</th>
+                        </thead>
+                        <tbody>
+                            <!--- <div>{{selectAlbum}}{{selectImg}}</div> -->
+                            <tr align="center">
+                            <td><div><img src="./assets/Images/covers/{{selectImg}}.jpg"  alt="Cinque Terre" height="300px" width="450px" /></div></td> 
+                            </tr>
+                            <tr>
+                            <td><div [innerHTML]="selectAlbum  | safe:'html' " ></div></td>
+                            </tr>   
+                            <!--<tr>
+                                <td><div><img src="./assets/Images/albums/{{albumImage}}.jpg" class="img-circle" alt="Cinque Terre" height="20px" width="20px"/></div></td> 
+                                </tr> -->
+                        </tbody>
+
+                     
+                    </table>
+                 </div> 
+        </div>
+        
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div class="panel panel-primary">
+    <div class="panel-heading">
+        {{ title }}
+    </div>
+    <div class="panel-body">
+          <div class="container">      
+                <div class="row">
+                    <div *ngFor="let artist of music"> 
+                        <div class="column">
+                            <div *ngFor="let album of artist.artists; let i=index">
+                              <span>
+                                    <img src="./assets/Images/covers/{{album.cover}}.jpg"  height="400px" width="400px"/> 
+                                    <div>
+                                        <b>Album Name :</b>{{album.name}}
+                                    </div>
+                                    <div>
+                                        <b>Biography :</b>{{album.bio}}
+                                    </div>
+                                    <div>
+                                        <b>Gener :</b>{{album.genre}}
+                                    </div>
+                                    <button class="btn btn-primary" > Albums</button>
+                                    <div *ngIf="album.name=='Madonna'" >
+                                        <div *ngFor="let art of album.albums">
+                                            <img src="/assets/Images/albums/{{art.cover}}.jpg" height="100px" width="100px"/>
+                                            <div>{{ art.title}}</div> 
+                                            <div>{{art.cover}}</div> 
+                                        </div>     
+                                    </div>   
+                                                                                   
+                                        
+                                    </span>
+                                    </div>     
+                                    </div>    
+                            
+                        </div>
+                    </div>
+                  
+     </div>
+</div> -->
+
+
+<!--<div *ngIf="showAlbums">
+                                        
+                                                        {{i.cover}}
+                                                        {{i.title}}
+
+                                        </div>
+                                       <div *ngFor="let showAlbums of album.albums "> 
+                                    <img src="./assets/Images/albums/{{album.albums.cover}}.jpg"  height="100px" width="100px" />
+                                <div>{{album.albums[0].title}}</div> -->
+                            
+                 <!-- 
+                   
+                   <tr *ngFor="let song of music" >
+                  <table>
+                      <tr *ngFor="let album of song.artists">
+                  <td>{{album.name}}</td>
+                  <td>{{album.cover}}</td>
+                </tr>
+                </table>
+                <tr *ngFor="let song of music" ><table>
+                      {{song._id}}
+                      <tr *ngFor="let album of song.artists" >
+                  <td>{{album.id}}</td>
+                      </tr>
+                </table>
+                  </tr> -->
+              <!--  <tr *ngFor="let songs of music">
+                    <td>{{songs.artists[1].name}}</td>
+                    <td>{{songs.artists[1].bio}}</td>
+                    <td>{{songs.artists[1].albums[0].cover}}</td>
+                  </tr> 
+                
+                
+                
+                <button class="btn btn-primary" (click)="showAlbums()">Albums</button>
+                                    <div  *ngIf="showImage">
+                                    <div *ngFor="let list of album.albums"> 
+                                      
+                                        <div>
+                                        Album Name : {{ list.title}}
+                                        </div>
+                                      <img src="./assets/Images/albums/{{list.cover}}.jpg"  height="100px" width="100px" /> 
+                            
+                                </div>
+                            <div>
+                                        Album Name : {{ list.title}}
+                                        </div>
+                                      <img src="./assets/Images/albums/{{list.cover}}.jpg"  height="100px" width="100px" /> 
+                            -->
+          
+
+                  
+              
+       
+      
+

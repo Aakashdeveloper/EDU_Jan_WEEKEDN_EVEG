@@ -1,0 +1,95 @@
+{
+                            '_id':'5ab17276f36d282750913a51',
+                            'artists':[
+                                        {               'id':1,
+                                                        'name':'Jimi Hendrix',
+                                                        'cover':'jimi_hendrix',
+                                                        'bio':'James Marshall Jimi Hendrix was an American rock guitarist, singer, and songwriter. ',
+                                                        'albums':[
+                                                                {
+                                                                    'albumId':'a1',
+                                                                    'title':'Electric Ladyland',
+                                                                    'year':1968,
+                                                                    'cover':'electric-ladyland',
+                                                                    'price':20
+                                                                 },
+                                                                 {
+                                                                     'albumId':'a2',
+                                                                     'title':'Experience',
+                                                                     'year':1971,
+                                                                     'cover':'experienced',
+                                                                     'price':25
+                                                                }
+                                                                ],
+                                                            'genre':'rock, blues'
+                                         },
+                                    
+                    
+                                    ]
+                        }
+                         /*
+
+                    {
+                                                        'id':2,
+                                                        'name':'Madonna',
+                                                        'cover':'madonna',
+                                                        'bio':'Madonna Louise Ciccone is an American singer, songwriter, actress, and businesswoman.',
+                                                        'albums':[
+                                                                {
+                                                                        'albumId':'b1',
+                                                                    'title':'Like a Virgin',
+                                                                    'year':1984,
+                                                                    'cover':'like_a_virgin',
+                                                                    'price':20
+                                                                }
+                                                                ]      
+                                        }
+                                        */
+
+                                        <td>{{songs.artists[0].bio}}</td>
+                  <td>{{songs.artists[0].albums[0].cover}},{{songs.artists[0].albums[1].cover}}</td>
+
+
+
+
+                  /*import { Imusic } from './music.model';
+import { Observable } from 'rxjs';
+import { Injectable } from '@angular/core';
+import { Http } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
+
+@Injectable()
+
+export class MusicService{
+    private _MusicUrl='https://ngmusicdb.herokuapp.com/api/getMusic';
+
+    constructor( public _http:Http,
+                private __http:HttpClient){}
+
+    getAlbums():Observable<Imusic[]>{
+        return this.__http.get<Imusic[]>(this._MusicUrl);
+    }
+}*/
+
+
+import { Component ,OnInit} from '@angular/core';
+import { Imusic , Ialbums,Iartists } from './music.model'
+import { MusicService } from './music.service';
+
+@Component({
+selector:'app-song',
+templateUrl:'./music.component.html'
+})
+
+export class MusicComponent{
+    title:String='**** My Music ****';
+    music: Imusic[]; 
+    artists:Iartists[];
+    albums:Ialbums[];
+
+   constructor( private _musicSerive:MusicService){}
+    
+    NgOnInit():void {
+        this._musicSerive.getAlbums()
+        .subscribe((data) => this.music = data); 
+    }

@@ -1,0 +1,44 @@
+    display(name:String):void{ 
+    var img;
+       var test;
+        var i=0;
+        this.music.forEach(function(item){
+            console.log(item);
+            Object.keys(item).forEach(function(key){
+                 item.artists.forEach(function(item1){
+                    Object.keys(item1).forEach(function(key1){        
+                if(key1=="name"){
+                     if(item1[key1] == name){
+                       i=1;
+                       img=item1.cover;
+                     }
+                }
+                     if(key1== "albums" && i==1){
+                        //this.albums.forEach
+                        //Object.keys(item3).forEach(function(key2){
+                            item1[key1].forEach(function(item3){
+                                Object.keys(item3).forEach(function(key2){
+                                    //this.selectAlbum=this.selectAlbum+`<button>hi</button>`
+                                   if (key2 == "title"){
+                                         //var selectAlbum;
+                                        //console.log(item3);
+                                      test="<div>"+item3.title+"</div>" +test
+                                     // img=item3.cover +img;                     
+                                     //test=<img src="./assets/Images/albums/"+img+".jpg" />    
+                                   //console.log(key2 + ":" + item3[key2]) ;
+                                  // return item3[key2];
+                                    }
+                                })
+                            })
+                            i=0;
+                        //img[i]=test
+                        }
+                    }) 
+                 })  
+                })
+            })
+            this.selectAlbum =test
+            this.selectImg=img;
+           // console.log(this.selectImg)
+            //this.selectImg=img;
+        }
