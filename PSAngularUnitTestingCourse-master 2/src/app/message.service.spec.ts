@@ -19,7 +19,7 @@ describe('MessageService', () => {
 
     it('should remove all message when clear is called', () => {
         service = new MessageService();
-        service.add('message 2');
+        service.add('message2');
 
         service.clear();
 
