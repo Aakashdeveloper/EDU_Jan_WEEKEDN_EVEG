@@ -13,7 +13,7 @@
   "author": "EDUREKA",
   "license": "ISC",
   "dependencies": {
-    "@angular/core": "^6.1.0",
+    "@angular/core": "^11.0.5",
     "zone.js": "^0.8.27"
   },
   "devDependencies": {}
